@@ -20,4 +20,6 @@ def qa():
         question = data['question']
         context = data['context']
         print(question, context)
-        # answer = chatbot_server.computer_answer(question, context)
+        # answer = chatbot_server.computer_answer(question, context) 
+
+app.run()
