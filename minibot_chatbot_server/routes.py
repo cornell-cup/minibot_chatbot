@@ -5,7 +5,7 @@ import json
 import sys
 
 
-from minibot_chatbot_server.chatbot_server import ChatbotServer
+# from minibot_chatbot_server.chatbot_server import ChatbotServer
 # from minibot_chatbot_server import app
 
 app = Flask(__name__)
