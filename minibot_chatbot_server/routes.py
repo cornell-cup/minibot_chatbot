@@ -1,9 +1,13 @@
-from chatbot_server import ChatbotServer
-from minibot_chatbot_server import app
 from flask import Flask
 from flask import request, render_template, jsonify, session, redirect
 from flask_api import status
+import os.path
 import json
+import sys
+
+
+from minibot_chatbot_server.chatbot_server import ChatbotServer
+from minibot_chatbot_server import app
 
 chatbot_server = ChatbotServer(app.debug)
 
