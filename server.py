@@ -1,1 +1,1 @@
-from . import app
+from minibot_chatbot_server import app

@@ -1,4 +1,4 @@
-from chatbot import Chatbot
+from minibot_chatbot_server.chatbot import Chatbot
 
 chatbot = Chatbot()
 # print(chatbot.context_stack)
