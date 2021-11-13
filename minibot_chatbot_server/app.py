@@ -5,12 +5,12 @@ import json
 import sys
 
 
-from chatbot_server import ChatbotServer
+from chatbot import Chatbot
 # from minibot_chatbot_server import app
 
 app = Flask(__name__)
 
-chatbot_server = ChatbotServer(app.debug)
+chatbot = Chatbot()
 
 
 @app.route('/qa', methods=['POST', 'GET'])
@@ -20,6 +20,8 @@ def qa():
         question = data['question']
         context = data['context']
         print(question, context)
-        # answer = chatbot_server.computer_answer(question, context) 
+        # answer = chatbot.compute_answer(question, context)
+        chatbot.test()
+
 
 app.run()

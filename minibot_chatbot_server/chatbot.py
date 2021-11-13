@@ -46,3 +46,6 @@ class Chatbot:
             return "I don't have an answer to your question."
 
         return answer_dict['answer']
+
+    def test(self):
+        print("hello world")
