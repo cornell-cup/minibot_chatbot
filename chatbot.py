@@ -1,8 +1,6 @@
 import os
 from transformers import pipeline, AutoTokenizer, AutoModelForQuestionAnswering
 import torch
-# import pyaudio
-# import speech_recognition as sr
 import time
 
 
@@ -39,46 +37,12 @@ It becomes more malleable as its temperature increases."
 
 class Chatbot:
 
-    def __init__(self, context=default_context):
-        self.context_stack = [context]  # context
+    def compute_answer(self, context, input_question):
 
-    def update_context(self, context):
-        if context != "":
-            self.context_stack.append(context)
-
-    def get_context(self):
-        return self.context_stack[-1]
-
-    def get_all_context(self):
-        self.context_stack = ['. '.join(self.context_stack)]
-        return self.context_stack[-1]
-
-    def reset_context(self):
-        self.context_stack = [default_context]
-
-    def revert_context(self):
-        self.context_stack.pop()
-
-    # one question
-
-    def compute_answer(self, input_question):
-        # print('. '.join(self.context_stack))
-        # context = '. '.join(self.context_stack)
-
-        start = time.time()
-        self.context_stack = ['. '.join(self.context_stack)]
         answer_dict = nlp(question=input_question,
-                          context=self.context_stack[-1])
-        # print("Question:" + input_question)
+                          context=context)
 
         if answer_dict['score'] < .05:
-            # print("Answer: I don't have an answer to your question.")
             return "I don't have an answer to your question."
 
-        # if answer_dict['answer'] == 'You can follow lines and detect objects':
-        #     return "I" + answer_dict['answer'][3:]
-        # print("Answer: " + answer_dict['answer'])
-        # print(answer_dict['score'])
-        end = time.time()
-        print(end - start)
         return answer_dict['answer']
