@@ -5,7 +5,7 @@ import json
 import sys
 
 
-# from minibot_chatbot_server.chatbot_server import ChatbotServer
+from minibot_chatbot_server.chatbot_server import ChatbotServer
 # from minibot_chatbot_server import app
 
 app = Flask(__name__)
@@ -19,4 +19,5 @@ def qa():
         data = request.get_json()
         question = data['question']
         context = data['context']
-        answer = chatbot_server.computer_answer(question, context)
+        print(question, context)
+        # answer = chatbot_server.computer_answer(question, context)
