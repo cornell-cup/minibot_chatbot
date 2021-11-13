@@ -14,4 +14,4 @@ def qa():
         data = request.get_json()
         question = data['question']
         context = data['context']
-        answer = chatbot_server.computer_answer(context, question)
+        answer = chatbot_server.computer_answer(question, context)

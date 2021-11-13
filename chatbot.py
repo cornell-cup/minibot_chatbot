@@ -37,7 +37,7 @@ It becomes more malleable as its temperature increases."
 
 class Chatbot:
 
-    def compute_answer(self, context, input_question):
+    def compute_answer(self, input_question, context=default_context):
 
         answer_dict = nlp(question=input_question,
                           context=context)
