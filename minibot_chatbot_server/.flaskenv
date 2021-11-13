@@ -1,3 +1,0 @@
-FLASK_APP=routes.py
-FLASK_RUN_PORT=80
-FLASK_ENV=development
