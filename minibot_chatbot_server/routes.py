@@ -1,5 +1,5 @@
 from chatbot_server import ChatbotServer
-from chatbot_server import app
+from minibot_chatbot_server import app
 from flask import Flask
 from flask import request, render_template, jsonify, session, redirect
 from flask_api import status
