@@ -20,7 +20,6 @@ def qa():
         question = data['question']
         context = data['context']
         print(question, context)
-        chatbot.test()
         answer = chatbot.compute_answer(question, context)
         return answer
 
