@@ -15,15 +15,15 @@ chatbot = Chatbot()
 
 @app.route('/qa', methods=['POST', 'GET'])
 def qa():
-    if request.method == "POST":
-        print(request.headers)
-        print(request.body)
+    if request.method == "GET":
+        print(request)
         data = request.get_json()
         question = data['question']
         context = data['context']
         print(question, context)
         answer = chatbot.compute_answer(question, context)
         return answer
+    return ""
 
 
 app.run(host='0.0.0.0', port=8000)
