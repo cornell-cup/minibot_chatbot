@@ -3,7 +3,8 @@
 import requests
 if __name__ == "__main__":
     # set your url here
-    url = "http://localhost:8000/qa"
+    # url = "http://10.48.143.231:8881/qa"
+    url = "http://localhost:8081/qa"
     while True:
         context = input(
             "Please enter the context you would like Minibot to know.\n")
