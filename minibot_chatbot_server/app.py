@@ -3,14 +3,15 @@ from flask import request, render_template, jsonify, session, redirect
 import os.path
 import json
 import sys
+import time
 
 
-from chatbot import Chatbot
+# from chatbot import Chatbot
 # from minibot_chatbot_server import app
 
 app = Flask(__name__)
 
-chatbot = Chatbot()
+# chatbot = Chatbot()
 
 
 @app.route('/qa', methods=['POST', 'GET'])
@@ -21,11 +22,13 @@ def qa():
         question = data['question']
         context = data['context']
         print(question, context)
-        answer = chatbot.compute_answer(question, context)
+        # answer = chatbot.compute_answer(question, context)
+        answer = "dummy answer"
+        time.sleep(3)
 
         return answer
     return ""
 
 
 if __name__ == "__main__":
-    app.run(host='localhost')
+    app.run(host='0.0.0.0', port=8081)
