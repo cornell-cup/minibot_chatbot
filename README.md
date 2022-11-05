@@ -11,6 +11,5 @@ sudo ssh -i "minibot-chatbot.pem" ec2-user@ec2-3-135-193-192.us-east-2.compute.a
 
 From the project root directory:
 ```
-cd minibot_chatbot_server
-python -m flask run
+python minibot_chatbot_server/app.py
 ```
